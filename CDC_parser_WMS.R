@@ -139,9 +139,9 @@ load("gun_deaths_18.RData")
 
 # The following code will bring all of the separate years together.
 
-guns <- rbind(guns_12, guns_13, guns_14, guns_15, guns_16, guns_17, guns_18)
+all_guns <- rbind(guns_12, guns_13, guns_14, guns_15, guns_16, guns_17, guns_18)
 
-guns <- guns_usa %>%
+all_guns <- guns_usa %>%
   mutate(place = factor(injury_place, labels = c("Home", "Residential institution", "School/instiution", "Sports", "Street", 
                                                  "Trade/service area", "Industrial/construction", "Farm", "Other specified", 
                                                  "Other unspecified")),
@@ -156,5 +156,8 @@ guns <- guns_usa %>%
          race = ifelse(is.na(race), "Unknown", race)) %>%
   select(year, month, intent, police, sex, age, race, hispanic, place, education)
  
+ save(all_guns, file = "guns.RData")
+ write.csv(all_guns, file = "guns.csv")
+
  guns <- read_csv("guns.csv")
 ```
