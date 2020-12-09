@@ -1,4 +1,4 @@
-# CDC_parser is a function developed by data scientists at fivethirtyeight. I have slightly adapted their code so that it would clean data from all years between (and including) 2012 to 2018. The original function can be found here:   
+# CDC_parser is a function developed by data scientists at fivethirtyeight. I have slightly adapted their code so that it would clean data from all years between (and including) 2012 to 2018. The original function can be found here: https://github.com/fivethirtyeight/guns-data/blob/master/CDC_parser.R    
 
 CDC_parser_WMS <- function(year, url) {
   
